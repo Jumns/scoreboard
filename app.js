@@ -1,6 +1,8 @@
 //getting the score values
 let homePoints = document.getElementById("home-points");
 let guestPoints = document.getElementById("guest-points");
+let newGame = document.getElementById("new-game");
+let whoIsLeading = document.getElementById("who-is-leading");
 let count = 0;
 let count2 = 0;
 
@@ -52,15 +54,35 @@ function addPoint(event) {
   }
 }
 
+// hightlight the leading point to limegreen, orange when draw else maintain default color
 function leadingTeam() {
-  if (homePoints.textContent > guestPoints.textContent) {
+  if (count > count2) {
     guestPoints.style.color = "var(--pink)";
     homePoints.style.color = "var(--limegreen)";
-  } else if (guestPoints.textContent > homePoints.textContent) {
+    let point = count - count2;
+    whoIsLeading.textContent = `Home is leading with: ${point} points`;
+  } else if (count2 > count) {
     homePoints.style.color = "var(--pink)";
     guestPoints.style.color = "var(--limegreen)";
+    point = count2 - count;
+    whoIsLeading.textContent = `Guest is leading with: ${point} points`;
   } else {
     homePoints.style.color = "var(--orange)";
     guestPoints.style.color = "var(--orange)";
+    whoIsLeading.textContent = `Home vs Guest are Draw`;
   }
 }
+
+// new game
+newGame.addEventListener("click", function (e) {
+  e.preventDefault();
+  if (e.target.id === "new-game") {
+    count = 0;
+    count2 = 0;
+    homePoints.textContent = count;
+    guestPoints.textContent = count2;
+    homePoints.style.color = "var(--pink)";
+    guestPoints.style.color = "var(--pink)";
+    whoIsLeading.textContent = "Point Tracker";
+  }
+});
