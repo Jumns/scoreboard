@@ -46,23 +46,23 @@ h3 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-transform: uppercase;
   color: var(--white);
-  margin-bottom: 0.5rem;
-  font-size: 2.5rem;
+  /* margin-bottom: 0.5rem; */
+  font-size: 2rem;
   grid-area: header;
 }
 
 .nested-container .points {
-  width: 155px;
-  height: 120px;
+  width: 145px;
+  height: 110px;
   background-color: var(--black);
   color: var(--pink);
-  font-size: 4rem;
-  margin-bottom: 0.5rem;
+  font-size: 3.5rem;
+  margin: 1rem 0;
   display: grid;
   grid-area: point;
   place-items: center;
   font-family: "Cursed Timer ULiL";
-}
+  }
 
 .leading {
   color: var(--limegreen);
@@ -70,7 +70,7 @@ h3 {
 .nested-container .add-points {
   display: flex;
   justify-content: space-between;
-  width: 155px;
+  width: 145px;
   grid-area: add-point;
 }
 
@@ -78,7 +78,7 @@ h3 {
   border: 1px solid var(--light-blue);
   color: var(--light-blue);
   font-family: "Cursed Timer ULiL";
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   padding: 0.4rem;
   cursor: pointer;
   background-color: transparent;
